@@ -1,14 +1,9 @@
 import openai 
+import os
 import streamlit as st
-
-from cryptography.fernet import Fernet
-key = b'vPY3RIw5uiT3n9D4jAJV784sKucjy2TqV43_tvNLwq8='
-fernet = Fernet(key)
-decMessage = fernet.decrypt(b'gAAAAABkC2KGGRz5S5k2HrDhgvgpro5j_PR5885Ax-KXyS5UHT4-lKv2qS3J6ribOEhYAJvunHjTJ-25TnBQIXz-Ja8IDKPG6kX4dIkjPaSORmjPkVvr7SEfQr8cE7_UD8iyuEWg0210WmbdJR1HxbvXBPiTXLOO2g==').decode()
-
 # pip install streamlit-chat  
 from streamlit_chat import message
-openai.api_key = decMessage
+openai.api_key = os.getenv("chat")
 def generate_response(prompt):
     completions = openai.Completion.create(
         engine = "text-davinci-003",
