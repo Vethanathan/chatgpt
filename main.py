@@ -15,7 +15,7 @@ def generate_response(prompt):
     )
     message = completions.choices[0].text
     return message
-st.title("Cusomized CHATGPT by VETHANTHAN SRIVATSAN SANTHOSH")
+st.title("Cusomized CHATGPT by VETHANATHAN SRIVATSAN SANTHOSH")
 
 # Storing the chat
 if 'generated' not in st.session_state:
